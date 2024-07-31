@@ -7,36 +7,20 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container-all">
     <img name="slide">
-    <div class="container">
-            <h1>Weather App</h1>
-            <form id="weather-form">
+    <div class="container-all">
+        <form id="weather-form">
                 <input type="text" id="input" placeholder="add city">
                 <button id="search"><img src="images/clouds.png"></button>
-            </form>
-            <div id="weather-result" class="weather-result">
-                    <img src="images/mist.png" class="img-weather">
-                    <h1>26°C</h1>
-                    <h2>casablaca</h2>
-                <div class="butome">
-                    <div class="humidity">
-                        <img src="images/humidity.png">
-                        <div class="p">
-                          <p>83%</p>
-                          <P>humidity</P>   
-                        </div>
-                    </div>
-                    <div class="wind-speed">
-                        <img src="images/wind.png">
-                        <div class="p">
-                           <p>2.06Km/h</p>
-                           <p>wind speed</p>
-                        </div>
-                    </div>
-                </div>
-            </div> 
-    </div>
+        </form>
+      <div class="container-result">
+        <div class="container">
+            <h1>Today's Weather</h1>
+            <div class="weather-result" id="weather-result">
+
+            </div>
+        </div>
+      </div>
     </div>
     <script src="script.js"></script>
 </body>
