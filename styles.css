@@ -30,22 +30,22 @@ form{
 }
 form input{
     width: 50%;
-    background-color: rgb(54, 53, 53);
+    background-color: rgba(255, 255, 255, 0.442);
     border-radius: 80px 0 0 80px;
     padding: 30px;
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     font-size: 80px;
 }
 form button{
-    background-color: rgb(54, 53, 53);
+    background-color: rgba(255, 255, 255, 0.404);
     border-radius: 0 80px 80px 0;
     padding: 40px;
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     font-size: 80px;
     cursor: pointer;
 }
 form button:hover{
-    background-color: rgb(116, 111, 111);
+    background-color: rgb(255, 255, 255);
 }
 .container {
     width: 60%;
@@ -56,10 +56,11 @@ form button:hover{
 .container h1 {
     font-size: 200px;
     font-family: 'Courier New', Courier, monospace;
-    color: rgb(59, 34, 1);
+    color: rgb(170, 137, 93);
 }
 .container h2{
     font-size: 200px;
+    color: rgb(196, 229, 229);
 }
 .img-weather{
     width: 800px;
@@ -93,4 +94,38 @@ form button:hover{
     font-size: 100px;
     margin: 10px;
     color: rgb(255, 255, 255);
+}
+.container-result{
+    display: flex;
+    gap: 20px;
+}
+.prayer-times{
+    width: 35%;
+    background-color: rgba(0, 0, 0, 0.212);
+    border-radius: 30px;
+}
+.prayer-times h1{
+    font-size: 200px;
+    font-family: 'Courier New', Courier, monospace;
+    color: rgb(170, 137, 93);
+    text-align: center;
+}
+.PrayerTime{
+    display: flex;
+    gap: 50%;
+}
+.PrayerTime h2{
+    font-size: 70px;
+    color: aliceblue;
+    margin: 20px;
+}
+.PrayerTime p{
+    font-size: 70px;
+    color: rgb(167, 182, 197);
+    margin: 20px;
+}
+.prayer-times-result hr{
+    font-size: 20px;
+    width: 80%;
+    margin: 20px;
 }

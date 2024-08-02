@@ -22,10 +22,9 @@ function changimg(){
 }
 window.onload = changimg;
 
-//weather information
+//weather informaion
 
 const apiKey = 'deae09f0034fab7ee3a7cc1fc60e0dfe'; 
-
 const weatherForm = document.getElementById('weather-form');
 const weatherResult = document.getElementById('weather-result');
 const input = document.getElementById('input');
@@ -35,7 +34,7 @@ weatherForm.addEventListener('submit', function(event) {
     const city = input.value;
     getWeather(city);
 });
- 
+
 function getWeather(city) {
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
     
@@ -83,3 +82,60 @@ function displayWeather(data) {
         </div>
     `;
 }
+
+// Add prayer times
+
+const prayerTimesResult = document.getElementById('prayer-times-result');
+
+function getPrayerTimes(city) {
+    const url = `https://api.aladhan.com/v1/timingsByCity?city=${city}&country=&method=2`;
+    
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            displayPrayerTimes(data.data.timings);
+        })
+        .catch(error => {
+            console.error('Error fetching prayer times:', error);
+        });
+}
+
+function displayPrayerTimes(timings) {
+    prayerTimesResult.innerHTML = `
+        <hr>
+        <div class="PrayerTime">
+            <h2>Fajr</h2>
+            <p>${timings.Fajr}</p>
+        </div>
+        <hr>
+        <div class="PrayerTime">
+            <h2>Dhuhr</h2>
+            <p> ${timings.Dhuhr}</p>
+        </div>
+        <hr>
+        <div class="PrayerTime">
+            <h2>Asr</h2>
+            <p>${timings.Asr}</p>
+        </div>
+        <hr>
+        <div class="PrayerTime">
+            <h2>Maghrib</h2>
+            <p>${timings.Maghrib}</p>
+        </div>
+        <hr>
+        <div class="PrayerTime">
+            <h2>Isha</h2>
+            <p>${timings.Isha}</p>
+        </div>
+        <hr>
+    `;
+}
+
+// search with weather in input 
+
+weatherForm.addEventListener('submit', function(event) {
+    event.preventDefault();
+    const city = input.value;
+    getWeather(city);
+    getPrayerTimes(city);
+});
